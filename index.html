@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>បញ្ជីមុខម្ហូប - តូប តាកៅ</title>
+    <!-- ផ្ទុក Tailwind CSS CDN ដើម្បីងាយស្រួលប្រើសម្រាប់រចនា -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* កំណត់ពុម្ពអក្សរសម្រាប់គេហទំព័រទាំងមូល */
+        body {
+            font-family: 'Inter', 'Khmer OS Siemreap', sans-serif;
+        }
+        /* កំណត់រចនាបថមូលដ្ឋានសម្រាប់ធាតុមួយចំនួន */
+        .menu-item img {
+            border-radius: 0.5rem 0.5rem 0 0; /* កំណត់ជ្រុងមូលសម្រាប់រូបភាពតែខាងលើ */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+    <!-- ផ្នែក Header របស់គេហទំព័រ -->
+    <header class="bg-gray-900 text-white py-8 text-center rounded-b-lg shadow-md">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">បញ្ជីមុខម្ហូប និងភេសជ្ជៈ</h1>
+        <p class="text-xl md:text-2xl text-gray-300">សូមស្វាគមន៍មកកាន់ <span class="text-yellow-400 font-semibold">តូប តាកៅ</span>!</p>
+    </header>
+
+    <!-- ផ្នែកមាតិកាសំខាន់របស់គេហទំព័រ -->
+    <main class="container mx-auto p-4 md:p-8 bg-white shadow-lg rounded-lg my-8">
+        <!-- ផ្នែកសម្រាប់ប្រភេទមុខម្ហូប -->
+        <section class="menu-category mb-10">
+            <h2 class="text-center text-gray-700 text-3xl md:text-4xl font-bold mb-6 pb-4 border-b-2 border-gray-200">ម្ហូបសំខាន់</h2>
+            <div class="menu-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- មុខម្ហូបទី ១ (កែប្រែសម្រាប់ មីឆាគ្រឿងសមុទ្រ) -->
+                <div class="menu-item bg-white border border-gray-200 rounded-xl overflow-hidden text-center pb-4 shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-transform duration-200">
+                    <!-- រូបភាពមីឆាគ្រឿងសមុទ្រ - ត្រូវប្រាកដថាឈ្មោះ File នេះត្រឹមត្រូវនៅលើកុំព្យូទ័ររបស់អ្នក -->
+                    <img src="image/seafood_noodle.jpg.jpg" alt="មីឆាគ្រឿងសមុទ្រ" class="w-full h-48 object-cover block mb-4 border-b border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 px-4">មីឆាគ្រឿងសមុទ្រ</h3>
+                    <p class="px-4 text-sm text-gray-600 mb-4">មីឆាដ៏ឈ្ងុយឆ្ងាញ់ជាមួយបង្គា មឹក និងគ្រឿងសមុទ្រស្រស់ៗ។</p>
+                    <span class="price text-lg font-bold text-orange-600 block mt-2">15,000៛</span>
+                </div>
+
+                <!-- មុខម្ហូបទី ២ -->
+                <div class="menu-item bg-white border border-gray-200 rounded-xl overflow-hidden text-center pb-4 shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-transform duration-200">
+                    <!-- រូបភាពមុខម្ហូប (ប្រើ placeholder image) -->
+                    <img src="image/photo_9_2025-07-17_11-28-46.jpg" alt="បុកពោតប៉ាត់តេ" class="w-full h-48 object-cover block mb-4 border-b border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 px-4">បុកពោតប៉ាត់តេ</h3>
+                    <p class="px-4 text-sm text-gray-600 mb-4">ស្រស់ៗថ្មីៗ និងមានរសជាតិពិសេស។</p>
+                    <span class="price text-lg font-bold text-orange-600 block mt-2">12,000៛</span>
+                </div>
+
+                <!-- មុខម្ហូបទី ៣ (ឧទាហរណ៍បន្ថែម) -->
+                <div class="menu-item bg-white border border-gray-200 rounded-xl overflow-hidden text-center pb-4 shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-transform duration-200">
+                    <!-- រូបភាពមុខម្ហូប (ប្រើ placeholder image) -->
+                    <img src="https://placehold.co/600x400/000000/FFFFFF?text=មុខម្ហូបទី៣" alt="ឈ្មោះមុខម្ហូបទី ៣" class="w-full h-48 object-cover block mb-4 border-b border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 px-4">ឈ្មោះមុខម្ហូបទី ៣</h3>
+                    <p class="px-4 text-sm text-gray-600 mb-4">ការពិពណ៌នាអំពីមុខម្ហូបនេះ ដូចជាគ្រឿងផ្សំ និងរសជាតិពិសេស។</p>
+                    <span class="price text-lg font-bold text-orange-600 block mt-2">18,000៛</span>
+                </div>
+
+                <!-- អ្នកអាចបន្ថែមមុខម្ហូបផ្សេងទៀតនៅទីនេះ ដោយចម្លងកូដ div.menu-item នេះ -->
+
+            </div>
+        </section>
+
+        <!-- ផ្នែកសម្រាប់ប្រភេទភេសជ្ជៈ -->
+        <section class="menu-category mb-10">
+            <h2 class="text-center text-gray-700 text-3xl md:text-4xl font-bold mb-6 pb-4 border-b-2 border-gray-200">ភេសជ្ជៈ</h2>
+            <div class="menu-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- ភេសជ្ជៈទី ១ -->
+                <div class="menu-item bg-white border border-gray-200 rounded-xl overflow-hidden text-center pb-4 shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-transform duration-200">
+                    <!-- រូបភាពភេសជ្ជៈ (ប្រើ placeholder image) -->
+                    <img src="https://placehold.co/600x400/000000/FFFFFF?text=ភេសជ្ជៈទី១" alt="ឈ្មោះភេសជ្ជៈទី ១" class="w-full h-48 object-cover block mb-4 border-b border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 px-4">ឈ្មោះភេសជ្ជៈទី ១</h3>
+                    <p class="px-4 text-sm text-gray-600 mb-4">ការពិពណ៌នាអំពីភេសជ្ជៈនេះ ដូចជាប្រភេទ និងរសជាតិ។</p>
+                    <span class="price text-lg font-bold text-orange-600 block mt-2">5,000៛</span>
+                </div>
+
+                <!-- ភេសជ្ជៈទី ២ -->
+                <div class="menu-item bg-white border border-gray-200 rounded-xl overflow-hidden text-center pb-4 shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-transform duration-200">
+                    <!-- រូបភាពភេសជ្ជៈ (ប្រើ placeholder image) -->
+                    <img src="https://placehold.co/600x400/000000/FFFFFF?text=ភេសជ្ជៈទី២" alt="ឈ្មោះភេសជ្ជៈទី ២" class="w-full h-48 object-cover block mb-4 border-b border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 px-4">ឈ្មោះភេសជ្ជៈទី ២</h3>
+                    <p class="px-4 text-sm text-gray-600 mb-4">ការពិពណ៌នាអំពីភេសជ្ជៈនេះ ដូចជាប្រភេទ និងរសជាតិ។</p>
+                    <span class="price text-lg font-bold text-orange-600 block mt-2">7,000៛</span>
+                </div>
+
+                <!-- ភេសជ្ជៈទី ៣ (ឧទាហរណ៍បន្ថែម) -->
+                <div class="menu-item bg-white border border-gray-200 rounded-xl overflow-hidden text-center pb-4 shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-transform duration-200">
+                    <!-- រូបភាពភេសជ្ជៈ (ប្រើ placeholder image) -->
+                    <img src="https://placehold.co/600x400/000000/FFFFFF?text=ភេសជ្ជៈទី៣" alt="ឈ្មោះភេសជ្ជៈទី ៣" class="w-full h-48 object-cover block mb-4 border-b border-gray-200">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 px-4">ឈ្មោះភេសជ្ជៈទី ៣</h3>
+                    <p class="px-4 text-sm text-gray-600 mb-4">ការពិពណ៌នាអំពីភេសជ្ជៈនេះ ដូចជាប្រភេទ និងរសជាតិ។</p>
+                    <span class="price text-lg font-bold text-orange-600 block mt-2">6,500៛</span>
+                </div>
+
+                <!-- អ្នកអាចបន្ថែមភេសជ្ជៈផ្សេងទៀតនៅទីនេះ ដោយចម្លងកូដ div.menu-item នេះ -->
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ផ្នែក Footer របស់គេហទំព័រ -->
+    <footer class="bg-gray-900 text-white text-center py-6 mt-10 rounded-t-lg shadow-md">
+        <p class="text-sm mb-2">ទីតាំង: <span class="text-yellow-400">កោះនរា</span> | ម៉ោងបើក: <span class="text-yellow-400">៤ល្ងាចដល់២យប់</span></p>
+        <p class="text-sm">ទំនាក់ទំនង: <span class="text-yellow-400">០៩៧ ៦៤៨ ៩០០០</span> | <a href="https://www.facebook.com/yourpage" target="_blank" class="text-yellow-400 hover:underline">Facebook</a></p>
+    </footer>
+</body>
+</html>
