@@ -4,137 +4,504 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>បញ្ជីមុខម្ហូប - តូប តាកៅ</title>
-    <!-- ផ្ទុក Tailwind CSS CDN ដើម្បីងាយស្រួលប្រើសម្រាប់រចនា -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* កំណត់ពុម្ពអក្សរសម្រាប់គេហទំព័រទាំងមូល */
         body {
             font-family: 'Inter', 'Khmer OS Siemreap', sans-serif;
         }
-        /* កំណត់រចនាបថមូលដ្ឋានសម្រាប់ធាតុមួយចំនួន */
         .menu-item img {
-            border-radius: 0.5rem 0.5rem 0 0; /* កំណត់ជ្រុងមូលសម្រាប់រូបភាពតែខាងលើ */
+            border-radius: 10rem 10rem 1rem 1rem;
+            object-fit: cover;
         }
+        .options-container {
+            margin-top: 10px;
+            text-align: left;
+            padding: 0 1rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .option-group {
+            margin-bottom: 5px;
+        }
+        .option-group span {
+            font-weight: 600;
+            color: #333;
+        }
+        /* CSS សម្រាប់លាក់ categories */
+        .category-hidden {
+            display: none;
+        }
+        
+        /* Custom CSS for header spacing */
+        header h1 {
+            margin-bottom: 2rem; 
+        }
+        header p {
+            margin-top: 2rem; 
+        }
+
+        /* UPDATED: Style សម្រាប់ Footer Layout, Credit Photo, and Font Sizes */
+        footer {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding-top: 30px; 
+            padding-bottom: 30px; 
+        }
+        footer p {
+            margin-bottom: 5px; 
+            text-align: center; /* ត្រូវប្រាកដថាអក្សរនៅកណ្តាល */
+            line-height: 1.2; /* កំណត់គម្លាតបន្ទាត់ដើម្បីកុំឲ្យត្រួតគ្នាខ្លាំងពេក */
+        }
+        
+        /* UPDATED: Specific font sizes and increased bottom margins */
+        .footer-location, .footer-credit {
+            font-size: 1.5rem; /* បង្កើនទំហំអក្សរឲ្យធំជាងមុន */
+            font-weight: bold; /* ធ្វើឲ្យអក្សរដិតដើម្បីមើលឃើញកាន់តែច្បាស់ */
+            margin-bottom: 30px; /* គម្លាតរវាងធាតុទាំងពីរ */
+            white-space: nowrap; /* ព្យាយាមរក្សាអក្សរនៅលើបន្ទាត់តែមួយ */
+        }
+
+        /* UPDATED: Credit Photo Styles */
+        .credit-photo {
+            width: 150px; /* NEW: បង្កើនទំហំទទឹងរូបភាព */
+            height: 150px; /* NEW: បង្កើនទំហំកម្ពស់រូបភាព */
+            border-radius: 15px; /* NEW: ធ្វើឲ្យជ្រុងរូបភាពមូលបន្តិច (ជាជ្រុងមិនមូល) */
+            object-fit: cover; 
+            margin-top: 10px; 
+            border: 3px solid #fff; 
+            box-shadow: 0 0 15px rgba(0,0,0,0.5); /* NEW: បង្កើនស្រមោលបន្តិចឲ្យកាន់តែច្បាស់ */
+        }
+
+        /* Responsive adjustments for large text and photo */
+        @media (max-width: 768px) {
+            .footer-location, .footer-credit {
+                font-size: 1.5rem; /* កាត់បន្ថយទំហំនៅលើទូរស័ព្ទដើម្បីកុំឲ្យបែក */
+                white-space: normal; /* អនុញ្ញាតឲ្យបែកបន្ទាត់នៅលើទូរស័ព្ទ */
+                word-break: break-word; /* អនុញ្ញាតឲ្យបំបែកពាក្យនៅលើទូរស័ព្ទ */
+            }
+            .credit-photo {
+                width: 120px; /* កាត់បន្ថយទំហំរូបភាពសម្រាប់ Mobile */
+                height: 120px; 
+            }
+        }
+        @media (max-width: 480px) {
+            .footer-location, .footer-credit {
+                font-size: 1.2rem; /* កាត់បន្ថយទំហំនៅលើទូរស័ព្ទតូច */
+            }
+            .credit-photo {
+                width: 100px; /* កាត់បន្ថយទំហំរូបភាពសម្រាប់ Mobile តូច */
+                height: 100px; 
+            }
+        }
+        
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800 leading-relaxed">
-    <!-- ផ្នែក Header របស់គេហទំព័រ -->
-    <header class="bg-gray-900 text-white py-8 text-center rounded-b-lg shadow-md">
+
+    <header class="bg-gray-800 text-white py-8 text-center rounded-b-lg shadow-md">
+        <img src="image/logofood_stall.jpg" alt="Ta Kao Logo" class="h-24 mx-auto mb-4 rounded-full"> 
         <h1 class="text-4xl md:text-5xl font-bold mb-2">បញ្ជីមុខម្ហូប និងភេសជ្ជៈ</h1>
         <p class="text-xl md:text-2xl text-gray-300">សូមស្វាគមន៍មកកាន់ <span class="text-yellow-400 font-semibold">តូប តាកៅ</span>!</p>
     </header>
 
-    <!-- ផ្នែកមាតិកាសំខាន់របស់គេហទំព័រ -->
     <main class="container mx-auto p-4 md:p-8 bg-white shadow-lg rounded-lg my-8">
-        <!-- ផ្នែកសម្រាប់ប្រភេទមុខម្ហូប -->
-        <section class="menu-category mb-10">
-            <h2 class="text-center text-gray-700 text-3xl md:text-4xl font-bold mb-6 pb-4 border-b-2 border-gray-200">ម្ហូបសំខាន់</h2>
-            <div id="main-dishes-container" class="menu-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- មុខម្ហូបសំខាន់ៗនឹងត្រូវបានបញ្ចូលដោយ JavaScript នៅទីនេះ -->
-            </div>
-        </section>
 
-        <!-- ផ្នែកសម្រាប់ប្រភេទភេសជ្ជៈ -->
-        <section class="menu-category mb-10">
-            <h2 class="text-center text-gray-700 text-3xl md:text-4xl font-bold mb-6 pb-4 border-b-2 border-gray-200">ភេសជ្ជៈ</h2>
-            <div id="drinks-container" class="menu-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- ភេសជ្ជៈនឹងត្រូវបានបញ្ចូលដោយ JavaScript នៅទីនេះ -->
+        <div class="mb-8 p-4 bg-gray-50 rounded-lg shadow-sm flex items-center justify-center">
+            <label for="category-filter" class="text-lg font-semibold text-gray-700 mr-4">ជ្រើសរើសប្រភេទ:</label>
+            <select id="category-filter" class="block w-auto py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-lg">
+                <option value="all">ទាំងអស់</option>
+            </select>
+        </div>
+
+        <div id="all-categories-container">
             </div>
-        </section>
+        
     </main>
 
-    <!-- ផ្នែក Footer របស់គេហទំព័រ -->
-    <footer class="bg-gray-900 text-white text-center py-6 mt-10 rounded-t-lg shadow-md">
-        <p class="text-sm mb-2">ទីតាំង: <span class="text-yellow-400">កោះនរា</span> | ម៉ោងបើក: <span class="text-yellow-400">៤ល្ងាចដល់២យប់</span></p>
-        <p class="text-sm">ទំនាក់ទំនង: <span class="text-yellow-400">០៩៧ ៦៤៨ ៩០០០</span> | <a href="https://www.facebook.com/yourpage" target="_blank" class="text-yellow-400 hover:underline">Facebook</a></p>
+    <footer class="bg-gray-900 text-white text-center py-6 mt-50 rounded-t-lg shadow-md">
+        <p class="footer-location">ទីតាំង: <span class="text-yellow-400">កោះនរា</span> | ម៉ោងបើក: <span class="text-yellow-400">៤ល្ងាចដល់២យប់</span></p>
+        
+        <p class="footer-credit">Credit <span class="text-orange-600">097 768 3513</span> | <a href="https://www.facebook.com/SeyhaOnlineshopClarya" target="_blank" class="text-yellow-400 hover:underline">ម៉ក់ សីហា</a></p>
+        
+        <img src="d:\food stall menu\image\my_credit.jpg" alt="Profile Photo" class="credit-photo"> 
     </footer>
 
     <script>
-        // កំណត់បញ្ជីមុខម្ហូបសំខាន់ៗ
-        const mainDishes = [
-            {
-                name: "មីឆាគ្រឿងសមុទ្រ",
-                price: "15,000៛",
-                image: "image/photo_6_2025-07-17_11-28-46.jpg"
-            },
-            {
-                name: "សាច់គោអាំងទឹកប្រហុក",
-                price: "12,000៛",
-                image: "image/សាច់គោអាំងទឹកប្រហុក.jpg" 
-            },
-            {
-                name: "បាយឆាគ្រឿងសមុទ្រ",
-                price: "18,000៛",
-                image: "image/បាយឆាគ្រឿងសមុទ្រ.jpg" 
-            },
-            {
-                name: "មាន់លីងចេកខ្ចី",
-                price: "18,000៛",
-                image: "image/មាន់លីងចេកខ្ចី.jpg" 
-            },
-             {
-                name: "មីឆាគ្រឿងសមុទ្រ",
-                price: "18,000៛",
-                image: "image/seafood_noodle.jpg.jpg" 
-            },
-             {
-                name: "ភ្លាសាច់គោ",
-                price: "18,000៛",
-                image: "image/photo_47_2025-07-17_11-28-46.jpg" 
-            },
-        ];
+        document.querySelector('header img').src = 'image/logofood_stall.jpg'; 
 
-        const drinks = [
-            {
-                name: "សី្ទង",
-                price: "៣,000៛",
-                image: "image/sting.jpg" 
-            },
-            {
-                name: "កូការ​ កូឡា",
-                price: "៣,000៛",
-                image: "image/coca.jpg"
-            },
-            {
-                name: "ទឹកបរិសុទ្ធ",
-                price: "១,000៛",
-                image: "image/ទឹក.jpg"
-            },
-             {
-                 name: "ganzberg_beer",
-                 price: "3,500៛",
-                 image: "image/ganzberg_beer.jpg"
-             },
-             {
-                 name: "cabodai_beer",
-                 description: "តែទឹកដោះគោត្រជាក់ រសជាតិផ្អែមល្មម។",
-                 price: "5,500៛",
-                 image: "image/cambodai_beer.jpg"
-             }
-        ];
+        const allMenuCategories = {
+            "ម្ហូបឆា": [
+                {
+                    name: "បាយឆាសាច់គោ",
+                    price: "8,000៛",
+                    image: "image/photo_6_2025-07-17_11-28-46.jpg",
+                    options: [
+                        { type: "សាច់", choices: ["សាច់គោ", "សាច់មាន់", "សាច់ជ្រូក"], default: "សាច់គោ" },
+                        { type: "ទំហំ", choices: ["ធម្មតា", "ធំ ( +2,000៛)"], default: "ធម្មតា" }
+                    ]
+                },
+                {
+                    name: "បាយឆាគ្រឿងសមុទ្រ",
+                    price: "10,000៛",
+                    image: "image/បាយឆាគ្រឿងសមុទ្រ.jpg",
+                    options: [
+                        { type: "រសជាតិ", choices: ["ហឹរតិច", "ហឹរល្មម", "ហឹរខ្លាំង"], default: "ហឹរល្មម" }
+                    ]
+                },
+                {
+                    name: "មីឆាគ្រឿងសមុទ្រ",
+                    price: "10,000៛",
+                    image: "image/seafood_noodle.jpg.jpg" 
+                },
+                {
+                    name: "មីឆាសាច់គោ​ + ពងចៀន",
+                    price: "8,000៛",
+                    image: "image/photo_44_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ឆាក្ដៅកង្កែប",
+                    price: "10,000៛",
+                    image: "image/photo_41_2025-07-17_11-28-46.jpg" 
+                },
+                 {
+                    name: "មីឆាគីឡូ + ពងទា",
+                    price: "8,000៛",
+                    image: "image/photo_11_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ឆាសាច់គោក្រសាំងទាប",
+                    price: "10,000៛",
+                    image: "image/photo_25_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ឆាសាច់មាន់ម្រះព្រៅ",
+                    price: "10,000៛",
+                    image: "image/photo_23_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "បាយឆាម្រះព្រៅ",
+                    price: "10,000៛",
+                    image: "image/photo_5_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ឆាងាវអំពិលទុំ",
+                    price: "12,000៛",
+                    image: "image/chhha_ngeav12000.jpg" 
+                },
+                 {
+                    name: "ឆាក្ដៅអន្ទង់",
+                    price: "10,000៛",
+                    image: "image/photo_24_2025-07-17_11-28-46.jpg" 
+                 }
+            ],
+            "ម្ហូបអាំង": [
+                {
+                    name: "នំប៉័ុងអាំងសាច់ក្រក​​ + បាត់តេ",
+                    price: "4,000៛",
+                    image: "image/photo_15_2025-07-17_11-28-46.jpg"
+                },
+                {
+                    name: "សាច់គោអាំងទឹកប្រហុក",
+                    price: "15,000៛",
+                    image: "image/សាច់គោអាំងទឹកប្រហុក.jpg",
+                    options: [
+                        { type: "កម្រិតឆ្អិន", choices: ["ឆៅ (Rare)", "ឆ្អិនល្មម (Medium)", "ឆ្អិនល្អ (Well-done)"], default: "ឆ្អិនល្មម (Medium)" },
+                        { type: "បន្ថែម", choices: ["បន្លែ", "ពោះគោ", "បាទតេ"], default: "គ្មាន" }
+                    ]
+                },
+                {
+                    name: "សាច់គោអាំងចង្កាក់",
+                    price: "10,000៛",
+                    image: "image/photo_45_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ពងមាន់អាំង",
+                    price: "1,000៛",
+                    image: "image/1000.jpg" 
+                },
+                {
+                    name: "បង្គារអាំង",
+                    price: "10,000៛",
+                    image: "image/បង្គារ10000.jpg" 
+                },
+                {
+                    name: "សាច់ក្រក សាច់គោអាំង",
+                    price: "10,000៛",
+                    image: "image/sachkrk1000.jpg" 
+                }
+            ],
+            "ម្ហូបបំពង/ចៀន": [
+                {
+                    name: "ប្រុយត្រីបំពង",
+                    price: "10,000៛",
+                    image: "image/photo_36_2025-07-17_11-28-46.jpg" 
+                },
+                 {
+                    name: "ប្រហិតចៀន",
+                    price: "10,000៛",
+                    image: "image/photo_38_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ពោតបំពង​ពងទាប្រៃ",
+                    price: "10,000៛",
+                    image: "image/photo_42_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "កូនត្រីបំពងម្សៅ",
+                    price: "10,000៛",
+                    image: "image/photo_30_2025-07-17_11-28-46.jpg" 
+                }
+            ],
+            "ម្ហូបលីង": [
+                {
+                    name: "ជើងមាន់លីងចេកខ្ចី",
+                    price: "10,000៛",
+                    image: "image/មាន់លីងចេកខ្ចី.jpg" 
+                },
+                {
+                    name: "មាន់លីងគល់ស្លឹកគ្រៃ",
+                    price: "10,000៛",
+                    image: "image/photo_12_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "សាច់មាន់លីងចេកខ្ចី",
+                    price: "10,000៛",
+                    image: "image/photo_31_2025-07-17_11-28-46.jpg" 
+                }
+            ],
+            "ម្ហូបបុក/ភ្លា": [
+                {
+                    name: "បុកមីគ្រឿងសមុទ្រ",
+                    price: "12,000៛",
+                    image: "image/photo_26_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "បុកល្ហុងក្តាមសេះ",
+                    price: "12,000៛",
+                    image: "image/photo_27_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ភ្លាបង្គារស្រស់ ទឹកត្រីកោះកុង",
+                    price: "15,000៛",
+                    image: "image/photo_19_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ពោះគោទឹកប្រហុក",
+                    price: "10,000៛",
+                    image: "image/photo_32_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "បុកល្ហុងត្រីសាលម៉ុន",
+                    price: "18,000៛",
+                    image: "image/photo_14_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "បុកក្តាមសេះ ជាមួយបង្គារ",
+                    price: "18,000៛",
+                    image: "image/photo_17_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "បុកពោត + បាត់តេ + បង្គារឆ្អិន",
+                    price: "15,000៛",
+                    image: "image/photo_9_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ភ្លាសាច់គោ",
+                    price: "12,000៛",
+                    image: "image/photo_18_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ភ្លាសាច់គោ",
+                    price: "10,000៛",
+                    image: "image/photo_28_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ឈុតបុកល្ហុកអំពិលខ្ចី",
+                    price: "16,000៛",
+                    image: "image/photo_6_2025-07-26_21-06-48.jpg" 
+                },
+                {
+                    name: "បុកល្ហុងពងទាកូន",
+                    price: "10,000៛",
+                    image: "image/photo_1_2025-07-26_21-06-48.jpg" 
+                },
+                {
+                    name: "បុកងាវសុទ្ធ",
+                    price: "15,000៛",
+                    image: "image/bukngeav15000.jpg" 
+                },
+                {
+                    name: "បុកក្តាមសេះ",
+                    price: "15,000៛",
+                    image: "image/bukkdamses15000.jpg" 
+                }
+            ],
+            "ម្ហូបផ្សេងៗ": [
+                {
+                    name: "ខាត់ណាទឹកភ្នែក",
+                    price: "12,000៛",
+                    image: "image/photo_47_2025-07-17_11-28-46.jpg" 
+                }, 
+                {
+                    name: "ងាវស្រុះស្រស់ៗ",
+                    price: "12,000៛",
+                    image: "image/photo_20_2025-07-17_11-28-46.jpg" 
+                },
+                 {
+                    name: "សាច់ក្រក់",
+                    price: "10,000៛",
+                    image: "image/photo_46_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "គ្រប់ស្វាយចន្ទី",
+                    price: "6,000៛",
+                    image: "image/photo_43_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ពងទាកូន",
+                    price: "1,500៛",
+                    image: "image/photo_29_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ងៀតគោ",
+                    price: "10,000៛",
+                    image: "image/photo_35_2025-07-17_11-28-46.jpg" 
+                },
+                {
+                    name: "ឈុតប្រហិតឆឹង",
+                    price: "10,000៛",
+                    image: "image/photo_5_2025-07-26_21-06-48.jpg" 
+                },
+                {
+                    name: "ខ្យងចំហុយអំបិលម្រេច",
+                    price: "10,000៛",
+                    image: "image/photo_3_2025-07-26_21-06-48.jpg" 
+                },
+                {
+                    name: "ងៀតក្របី",
+                    price: "10,000៛",
+                    image: "image/photo_4_2025-07-26_21-06-48.jpg" 
+                },
+                {
+                    name: "ងៀតគោ",
+                    price: "10,000៛",
+                    image: "image/photo_2_2025-07-26_21-06-48.jpg" 
+                },
+                {
+                    name: "សាលម៉ុនស្រូបទឹកត្រី",
+                    price: "20,000៛",
+                    image: "image/salmun20000.jpg" 
+                }
+            ],
+            "ភេសជ្ជៈ+ស្រាបៀរ": [
+                {
+                    name: "សី្ទង",
+                    price: "៣,000៛",
+                    image: "image/sting.jpg",
+                    options: [
+                        { type: "ទឹកកក", choices: ["ជាមួយទឹកកក", "មិនដាក់ទឹកកក"], default: "ជាមួយទឹកកក" }
+                    ]
+                },
+                {
+                    name: "កូការ​ កូឡា",
+                    price: "៣,000៛",
+                    image: "image/coca.jpg"
+                },
+                {
+                    name: "ទឹកបរិសុទ្ធ",
+                    price: "១,000៛",
+                    image: "image/ទឹក.jpg"
+                },
+                {
+                    name: "ganzberg_beer ពណ៍សរ-ពណ៍លឿង",
+                    price: "3,000៛",
+                    image: "image/ganzberg_beer.jpg"
+                },
+                {
+                    name: "cambodia_beer ពណ៍សរ-ពណ៍លឿង",
+                    price: "3,000៛",
+                    image: "image/cambodai_beer.jpg"
+                },
+                {
+                    name: "Hanuman Beer ពណ៍ខៀវ-ពណ៍សរ-ពណ៍ខ្មៅ ",
+                    price: "3,000៛",
+                    image: "image/Hanuman Beer.png"
+                }
+            ]
+        };
 
-        // មុខងារសម្រាប់បង្កើតធាតុមុខម្ហូបនីមួយៗ
-        function createMenuItem(item) {
+        function createMenuItem(item, index) { 
+            let optionsHtml = '';
+            if (item.options && item.options.length > 0) {
+                optionsHtml += `<div class="options-container">`;
+                item.options.forEach(optionGroup => {
+                    optionsHtml += `
+                        <div class="option-group">
+                            <span>${optionGroup.type}:</span> ${optionGroup.choices.join(', ')}
+                            ${optionGroup.default ? ` (លំនាំដើម: ${optionGroup.default})` : ''}
+                        </div>
+                    `;
+                });
+                optionsHtml += `</div>`;
+            }
+
             return `
                 <div class="menu-item bg-white border border-gray-200 rounded-xl overflow-hidden text-center pb-4 shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-transform duration-200">
                     <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover block mb-4 border-b border-gray-200">
-                    <h3 class="text-xl font-semibold mb-2 text-gray-800 px-4">${item.name}</h3>
-                    <p class="px-4 text-sm text-gray-600 mb-4">${item.description}</p>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 px-4">
+                        ${index + 1}. ${item.name} 
+                    </h3>
                     <span class="price text-lg font-bold text-orange-600 block mt-2">${item.price}</span>
+                    ${optionsHtml}
                 </div>
             `;
         }
 
-        // ផ្ទុកមុខម្ហូបសំខាន់ៗទៅក្នុងគេហទំព័រ
-        const mainDishesContainer = document.getElementById('main-dishes-container');
-        mainDishes.forEach(item => {
-            mainDishesContainer.innerHTML += createMenuItem(item);
-        });
+        const allCategoriesContainer = document.getElementById('all-categories-container'); 
+        const categoryFilter = document.getElementById('category-filter');
 
-        // ផ្ទុកភេសជ្ជៈទៅក្នុងគេហទំព័រ
-        const drinksContainer = document.getElementById('drinks-container');
-        drinks.forEach(item => {
-            drinksContainer.innerHTML += createMenuItem(item);
+        function renderAndFilterCategories(selectedCategory) {
+            allCategoriesContainer.innerHTML = ''; 
+
+            let categoryCount = 0; 
+
+            for (const categoryName in allMenuCategories) {
+                if (allMenuCategories.hasOwnProperty(categoryName)) {
+                    const dishesInCategory = allMenuCategories[categoryName];
+                    const categoryId = `category-${categoryCount++}`; 
+
+                    let categoryHtml = `
+                        <section id="${categoryId}" class="menu-category mb-10 ${selectedCategory !== 'all' && selectedCategory !== categoryName ? 'category-hidden' : ''}">
+                            <h2 class="text-center text-gray-700 text-3xl md:text-4xl font-bold mb-6 pb-4 border-b-2 border-gray-200">${categoryName}</h2>
+                            <div class="menu-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    `;
+
+                    dishesInCategory.forEach((item, index) => {
+                        categoryHtml += createMenuItem(item, index);
+                    });
+
+                    categoryHtml += `
+                            </div>
+                        </section>
+                    `;
+                    allCategoriesContainer.innerHTML += categoryHtml;
+
+                    if (!categoryFilter.querySelector(`option[value="${categoryName}"]`)) {
+                        const option = document.createElement('option');
+                        option.value = categoryName;
+                        option.textContent = categoryName;
+                        categoryFilter.appendChild(option);
+                    }
+                }
+            }
+        }
+
+        renderAndFilterCategories('all');
+
+        categoryFilter.addEventListener('change', function() {
+            const selectedValue = this.value;
+            renderAndFilterCategories(selectedValue);
         });
     </script>
 </body>
